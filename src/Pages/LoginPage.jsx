@@ -29,7 +29,8 @@ export default function LoginPage() {
                 <div className="text-center fs-1 mb-3 csetliColor">{lang.login}</div>
                 <TextBox title={"E-mail vagy felhasználónév"} type={"text"} placeholder={lang.Placeholderemailorusername} value={usernameOrEmail} setValue={setUsernameOrEmail} />
                 <TextBox title={"Jelszó"} type={"password"} placeholder={lang.placeholderpassword} value={jelszo} setValue={setJelszo} />
-                <div className="text-center mt-3">
+
+                <div className="text-center mt-3 csetliColor">
                     <Button content={"Bejelentkezés"} onClick={async () => {
                         if (!usernameOrEmail || !jelszo) {
                             alert("A felhasználónév vagy Email jelszópáros megadása kötelező")
