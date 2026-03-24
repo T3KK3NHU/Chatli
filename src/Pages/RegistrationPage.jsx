@@ -11,6 +11,8 @@ import useLanguage from "../language"
 
 export default function RegistrationPage() {
 
+    const navigate = useNavigate();
+
     const [lang, setLang]= useState(useLanguage(1))
 
     useEffect(()=>{
@@ -33,14 +35,14 @@ export default function RegistrationPage() {
                 <div> <img src={csetliLogo} alt="CsetliLogo" /> </div>
 
                 <div style={{ minWidth: 400 }}>
-                    <div className="text-center fs-1 csetliColor">Regisztráció</div>
-                    <TextBox title={"Felhasználónév"} type={"text"} placeholder={"Felhasználóneved"} value={felhasználonev} setValue={setFelhasznalonev} />
-                    <TextBox title={"E-mail"} type={"email"} placeholder={"Email cim"} value={email} setValue={setEmail} />
-                    <TextBox title={"Jelszó"} type={"password"} placeholder={"********"} value={jelszo} setValue={setJelszo} />
-                    <TextBox title={"Jelszó megerősítés"} type={"password"} placeholder={"********"} value={jelszo2} setValue={setJelszo2} />
+                    <div className="text-center fs-1 csetliColor">{lang.register}</div>
+                    <TextBox title={lang.username} type={"text"} placeholder={lang.username} value={felhasználonev} setValue={setFelhasznalonev} />
+                    <TextBox title={lang.email} type={"email"} placeholder={lang.email} value={email} setValue={setEmail} />
+                    <TextBox title={lang.password} type={"password"} placeholder={"********"} value={jelszo} setValue={setJelszo} />
+                    <TextBox title={lang.passwordagain} type={"password"} placeholder={"********"} value={jelszo2} setValue={setJelszo2} />
 
                     <div className="csetliColor text-decoration-none text-center">
-                        <Button content={"Regisztrálok"} onClick={async () => {
+                        <Button content={lang.register} onClick={async () => {
                             if (!email || !felhasználonev || !jelszo || !jelszo2) {
                                 return alert("Hiányos beviteli adat(ok)!")
                             }
@@ -50,23 +52,25 @@ export default function RegistrationPage() {
                             const res = await regisztracio(email, felhasználonev, jelszo)
                             alert(res.message)
                             if (res.result) {
-                                // navigálás a bejelentkezésbe
-                                <Link to="/login"></Link>
+                                // navigálás a bejelentkezésbe 
+                                    navigate("/login")
+                                
+        
                             }
                         }}/>
                     </div>
                     <div className="text-center mt-2">
-                        <Link to="/login" className="csetliColor text-decoration-none">Van fiókom</Link>
+                        <Link to="/login" className="csetliColor text-decoration-none">{lang.haveaccount}</Link>
                     </div>
                     <div className="text-center mt-2">
-                        <Link to="/" className="csetliColor text-decoration-none">Vissza a főoldalra</Link>
+                        <Link to="/" className="csetliColor text-decoration-none">{lang.backtohome}</Link>
                     </div>
                 </div>
                 <div style={{ minWidth:400}}>
                     <div className="text-center mt-1 ">
                         <img src={Profilkep} alt="Itt tölts fel profilképet" width={200}/>
-                            <div>
-                                <Button content={"Feltöltés"} value={kep} setValue={setKep} />
+                            <div className="csetliColor">
+                                <Button content={lang.upload} value={kep} setValue={setKep} />
                             </div>
                     </div>
                 </div>

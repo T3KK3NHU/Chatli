@@ -4,17 +4,18 @@ import messages from "../kepek/feketeKomment.svg"
 import settings from "../kepek/feketeSettings.svg"
 import people from "../kepek/feketePeople.svg"
 import useLanguage from "../language"
+import React, { useState, useEffect } from "react"
 
 export default function Messages() {
 
-    const [lang, setLang]= useState(useLanguage(1))
+    const navigate = useNavigate();
 
-    useEffect(()=>{
-        // a localstorage-et beolvassuk
-        const language = JSON.parse(localStorage.getItem("language")) || {lang: "0"}
-        setLang(useLanguage(language.lang))
-        console.log(lang.username);
-    },[])
+    const [lang, setLang] = useState(1);
+
+    useEffect(() => {
+        const language = JSON.parse(localStorage.getItem("language")) || { lang: "0" };
+        setLang(useLanguage(language.lang));
+    }, []);
 
     return (
         <div className="background">

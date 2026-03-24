@@ -10,6 +10,9 @@ import useLanguage from "../language"
 
 
 export default function LoginPage() {
+
+    const navigate = useNavigate();
+
     const [usernameOrEmail, setUsernameOrEmail] = useState("");
     const [jelszo, setJelszo] = useState("");
 
@@ -31,7 +34,7 @@ export default function LoginPage() {
                 <TextBox title={"Jelszó"} type={"password"} placeholder={lang.placeholderpassword} value={jelszo} setValue={setJelszo} />
 
                 <div className="text-center mt-3 csetliColor">
-                    <Button content={"Bejelentkezés"} onClick={async () => {
+                    <Button content={lang.login} onClick={async () => {
                         if (!usernameOrEmail || !jelszo) {
                             alert("A felhasználónév vagy Email jelszópáros megadása kötelező")
                             return;
@@ -40,19 +43,19 @@ export default function LoginPage() {
                         alert(res.message)
                         if (res.result) {
                             // navigálás a bejelentkezésbe
-                            <Link to="/mainmenu" className="text-decoration-none"></Link>
+                            navigate("/")
                         }
                     }} />
                 </div>
 
                 <div className="text-center mt-3">
-                    <Link to="/registration" className="csetliColor text-decoration-none">Még nincs fiókom</Link>
+                    <Link to="/registration" className="csetliColor text-decoration-none">{lang.donthaveaccount}</Link>
                 </div>
                 <div className="text-center mt-2">
                     <Link to="/mainmenu" className="csetliColor text-decoration-none">vendég fiók</Link>
                 </div>
                 <div className="text-center mt-2">
-                    <Link to="/" className="csetliColor text-decoration-none">Vissza a főoldalra</Link>
+                    <Link to="/" className="csetliColor text-decoration-none">{lang.backtohome}</Link>
                 </div>
             </div>
         </div>

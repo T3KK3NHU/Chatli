@@ -4,8 +4,11 @@ import messages from "../kepek/feketeKomment.svg"
 import settings from "../kepek/feketeSettings.svg"
 import people from "../kepek/feketePeople.svg"
 import useLanguage from "../language"
+import React, { useState, useEffect } from "react"
 
 export default function Settings() {
+    
+    const navigate = useNavigate();
 
     const [lang, setLang]= useState(useLanguage(1))
 

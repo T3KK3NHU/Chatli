@@ -14,7 +14,7 @@ export default function useLanguage(language) {
         donthaveaccount: language === "1" ? "Még nincs fiókom" : "I don't have an account yet",
         Placeholderemailorusername: language === "1" ? "Felhasznlónév/E-mail" : "Username/E-mail",
         placeholderpassword: language === "1" ? "Jelszó" : "Password",
-        register: language === "1" ? "Regisztrálok" : "Register",
+        upload: language === "1" ? "Feltöltés" : "Upload",
         register: language === "1" ? "Regisztrálok" : "Register",
         register: language === "1" ? "Regisztrálok" : "Register",
         register: language === "1" ? "Regisztrálok" : "Register",

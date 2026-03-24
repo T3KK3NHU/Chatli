@@ -11,6 +11,8 @@ import Language from "../Components/Lanugage";
 import theme from "../kepek/sun.png";
 
 export default function HomePage() {
+    const navigate = useNavigate();
+
     const [lang, setLang]= useState(useLanguage(1))
 
     useEffect(()=>{
