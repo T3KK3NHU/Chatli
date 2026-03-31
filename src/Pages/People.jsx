@@ -21,7 +21,7 @@ export default function People() {
     },[])
 
     return (
-        <div className="background">
+        <div style={{ paddingTop: "90px" }} className="background">
                 <Navbar homeI={simplehaz} messagesI={messages} settingsI={settings} peopleI={people}/>
                 <div>Ez egy emberek??</div>
         </div>

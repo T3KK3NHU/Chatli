@@ -19,7 +19,7 @@ export default function Messages() {
     }, []);
 
     return (
-        <div className="background">
+        <div style={{ paddingTop: "90px" }} className="background">
                 <Navbar homeI={simplehaz} messagesI={messages} settingsI={settings} peopleI={people}/>
                 <div>EZ EGY ÜZENEET?</div>
         </div>

@@ -9,7 +9,7 @@ import PostCard from "../Components/PostCard";
 
 
 export default function MainMenu() {
-    
+
     const [lang, setLang] = useState(1);
 
     useEffect(() => {
@@ -18,12 +18,11 @@ export default function MainMenu() {
     }, []);
 
     return (
-        <div className="background">
-            <Navbar homeI={FillHouse} messagesI={messages} settingsI={settings} peopleI={people} />
-            <div>EZ EGY FOMENU??</div>
-            <PostCard/>
-            <PostCard/>
-            <PostCard/>
-        </div>
+            <div className="background" style={{ padding: "100px" }}>
+                <Navbar homeI={FillHouse} messagesI={messages} settingsI={settings} peopleI={people} />
+                <PostCard felhasznalonev={"0asd"} feltoltotkep={settings}/>
+                <PostCard />
+                <PostCard />
+            </div>
     );
 }

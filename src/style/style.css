@@ -1,10 +1,9 @@
 .background {
     background-image: linear-gradient(#6D6C6C, #222121);
     min-height: 100vh;
-    background-size: 500% 500%;
-    animation: move 5s alternate infinite;
+    background-size: 1000000% 1000000%;
+    animation: move 7s alternate infinite;
 }
-
 
 @keyframes move {
     from {
@@ -32,4 +31,24 @@
 
 .navbar{
     background: linear-gradient(to right, #FD0303ff, #D95E2Eff);;
+}
+
+.bombo {
+    border: solid #52bdd0;
+    border-radius: 45px;
+    background-color: #16b5d1;
+}
+
+
+.jelszo{
+    width: 350px;
+    text-align: center;
+}
+
+.felhNev{
+    height: 40px;
+}
+
+.nyelv{
+   width: 17rem;
 }

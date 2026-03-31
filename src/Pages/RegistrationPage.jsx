@@ -96,7 +96,7 @@ export default function RegistrationPage() {
                         <div>
                             {
                                 imagePreview ? (<img src={imagePreview} className="w-100 h-100" style={{ objectFit: "cover" }} />)
-                                    : (<div>Kép helye</div>)
+                                    : (<div className="csetliColor">Kép helye</div>)
                             }
                         </div>
                         <div className="text-center mt-3">
