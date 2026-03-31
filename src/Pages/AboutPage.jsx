@@ -35,7 +35,7 @@ export default function AboutusPage() {
             </div>
             <div className="d-flex  justify-content-center align-items-center text-white ">{lang.abautus}</div>
             <div className="text-center mt-2">
-                <Link to="/" className="csetliColor text-decoration-none m-3">Vissza a főoldalra</Link>
+                <Link to="/" className="csetliColor text-decoration-none m-3">{lang.backtohome}</Link>
             </div>
         </div>
 

@@ -5,11 +5,11 @@ import messages from "../kepek/feketeKomment.svg";
 import settings from "../kepek/feketeSettings.svg";
 import people from "../kepek/feketePeople.svg";
 import useLanguage from "../language";
+import PostCard from "../Components/PostCard";
+
 
 export default function MainMenu() {
-
-    const navigate = useNavigate();
-
+    
     const [lang, setLang] = useState(1);
 
     useEffect(() => {
@@ -21,6 +21,9 @@ export default function MainMenu() {
         <div className="background">
             <Navbar homeI={FillHouse} messagesI={messages} settingsI={settings} peopleI={people} />
             <div>EZ EGY FOMENU??</div>
+            <PostCard/>
+            <PostCard/>
+            <PostCard/>
         </div>
     );
 }

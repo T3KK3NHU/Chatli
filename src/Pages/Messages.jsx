@@ -5,6 +5,7 @@ import settings from "../kepek/feketeSettings.svg"
 import people from "../kepek/feketePeople.svg"
 import useLanguage from "../language"
 import React, { useState, useEffect } from "react"
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Messages() {
 
