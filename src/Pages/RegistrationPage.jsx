@@ -5,7 +5,6 @@ import Button from "../Components/Button"
 import { regisztracio } from "../api";
 import { Link, useNavigate } from "react-router-dom";
 import csetliLogo from "../kepek/csetli.png";
-import Profilkep from "../kepek/csetlikereso.svg";
 import "../style/style.css"
 import useLanguage from "../language"
 
@@ -28,7 +27,7 @@ export default function RegistrationPage() {
     const [jelszo2, setJelszo2] = useState("");
     const [imagePreview, setImagePreview] = useState(null)
     const [file, setFile] = useState(null)
-    
+
 
     const saveToPreview = async (e) => {
         const selectedFile = e.target.files[0];
@@ -39,24 +38,24 @@ export default function RegistrationPage() {
     }
 
     const uploadData = async () => {
-    if (!file) {
-        alert('Nincs kiválasztva kép')
-        return
+        if (!file) {
+            alert('Nincs kiválasztva kép')
+            return
+        }
+        const data = await regisztracio(email, felhasználonev, jelszo, file)
+        console.log(data)
+        alert(data.message)
+        if (data.result) {
+            navigate(-1)
+        }
     }
-    const data = await regisztracio(email, felhasználonev, jelszo, file)
-    console.log(data)
-    alert(data.message)
-    if (data.result) {
-        navigate(-1)
-    }
-}
 
 
 
     return (
         <div className="background ">
-            <div className="vh-100 d-flex justify-content-center align-items-center ">
-                <div> <img src={csetliLogo} alt="CsetliLogo" /> </div>
+            <div className="vh-100 d-flex justify-content-center align-items-center">
+                <div className="mx-4"> <img src={csetliLogo} alt="CsetliLogo" /> </div>
 
                 <div style={{ minWidth: 400 }}>
                     <div className="text-center fs-1 csetliColor">{lang.register}</div>
@@ -91,22 +90,21 @@ export default function RegistrationPage() {
                         <Link to="/" className="csetliColor text-decoration-none">{lang.backtohome}</Link>
                     </div>
                 </div>
-                <div style={{ minWidth: 400 }}>
-                    <div className="text-center mt-1 ">
+
+                <div style={{ minWidth: 50, maxWidth:350 }}>
+                    <div className="text-center mt-1 mx-md-5 ">
                         <div>
                             {
                                 imagePreview ? (<img src={imagePreview} className="w-100 h-100" style={{ objectFit: "cover" }} />)
-                                    : (<div className="csetliColor">Kép helye</div>)
+                                    : (<div className="csetliColor"></div>)
                             }
                         </div>
                         <div className="text-center mt-3">
                             <input type="file" accept="image/*" className="form-control mb-3" onChange={saveToPreview} />
                         </div>
-                        <div className="csetliColor">
-                            <Button content={lang.upload} onClick={(async () => await uploadData())} />
-                        </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     )

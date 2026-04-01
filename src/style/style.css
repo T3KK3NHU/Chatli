@@ -16,7 +16,7 @@
     }
 }
 
-.csetliColor{
+.csetliColor {
     background: linear-gradient(to right, #FD0303ff, #D95E2Eff);
     background-clip: text;
     -webkit-background-clip: text;
@@ -24,13 +24,14 @@
     color: transparent;
 }
 
-.icon{
+.icon {
     width: 50px;
     margin: 10px;
 }
 
-.navbar{
-    background: linear-gradient(to right, #FD0303ff, #D95E2Eff);;
+.navbar {
+    background: linear-gradient(to right, #FD0303ff, #D95E2Eff);
+    ;
 }
 
 .bombo {
@@ -40,15 +41,30 @@
 }
 
 
-.jelszo{
+.jelszo {
     width: 350px;
     text-align: center;
 }
 
-.felhNev{
+.felhNev {
     height: 40px;
 }
 
-.nyelv{
-   width: 17rem;
+.nyelv {
+    width: 17rem;
+}
+
+.kor {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, white);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.accDelete{
+    color: rgba(180, 11, 11, 0.521);
 }
